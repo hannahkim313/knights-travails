@@ -1,8 +1,50 @@
+const getMoves = (position) => {
+  const moves = [];
+  const x = position[0];
+  const y = position[1];
+
+  if (x - 2 > -1 && y - 1 > -1) {
+    moves.push([x - 2, y - 1]);
+  }
+
+  if (x - 2 > -1 && y + 1 < 8) {
+    moves.push([x - 2, y + 1]);
+  }
+
+  if (x - 1 > -1 && y - 2 > -1) {
+    moves.push([x - 1, y - 2]);
+  }
+
+  if (x - 1 > -1 && y + 2 < 8) {
+    moves.push([x - 1, y + 2]);
+  }
+
+  if (x + 1 < 8 && y - 2 > -1) {
+    moves.push([x + 1, y - 2]);
+  }
+
+  if (x + 1 < 8 && y + 2 < 8) {
+    moves.push([x + 1, y + 2]);
+  }
+
+  if (x + 2 < 8 && y - 1 > -1) {
+    moves.push([x + 2, y - 1]);
+  }
+
+  if (x + 2 < 8 && y + 1 < 8) {
+    moves.push([x + 2, y + 1]);
+  }
+
+  return moves;
+};
+
 const knightMoves = (currPosition, newPosition) => {
   // Find the possible moves of currPosition (EX: [0, 0])
   // Pattern: [x +/- 1, y +/- 2] and [x +/- 2, y +/- 1]
   // Conditions: x < 8 and x > -1, y < 8 and y > -1
+  const moves = getMoves(currPosition);
   // => [[1, 2], [2, 1]]
+  console.log(moves);
   //
   // If array of possible moves contains newPosition:
   // Print the total number of moves and the positions of each move
