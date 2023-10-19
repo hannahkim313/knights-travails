@@ -1,4 +1,4 @@
-import knightMoves from './scripts/traversion.js';
+import knightMoves from './scripts/knight-moves.js';
 
 knightMoves([0, 0], [1, 2]);
 knightMoves([0, 0], [3, 3]);
