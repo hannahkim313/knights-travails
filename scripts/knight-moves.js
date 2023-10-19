@@ -56,13 +56,13 @@ const printPath = (moves, finalPosition) => {
   const path = [];
 
   while (moves[currKey] !== null) {
-    path.push(JSON.parse(moves[currKey]));
+    path.push(moves[currKey]);
     currKey = moves[currKey];
   }
 
   path.reverse();
-  path.push(finalPosition);
-  path.forEach((position) => console.log(JSON.stringify(position)));
+  path.push(JSON.stringify(finalPosition));
+  path.forEach((position) => console.log(position));
 };
 
 const knightMoves = (initialPosition, finalPosition) => {
