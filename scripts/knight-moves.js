@@ -40,7 +40,6 @@ const getLegalPositions = (position) => {
 const hasPosition = (set, position) => {
   const array = Array.from(set);
 
-  // Refactor to not use for/of loop
   for (const data of array) {
     const prevPosition = JSON.parse(data)[0];
 
@@ -63,7 +62,6 @@ const printPath = (moves, finalPosition) => {
 
   path.reverse();
   path.push(finalPosition);
-
   path.forEach((position) => console.log(JSON.stringify(position)));
 };
 
